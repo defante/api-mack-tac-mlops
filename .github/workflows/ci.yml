@@ -26,7 +26,6 @@ jobs:
     needs: build
     steps:
       - name: create pull request
-        run: gh pr create -B ${{ github.ref_name }} -H main --title 'Merge ${{ github.ref_name }} into main' --body 'Created by Github action'
+        run: gh pr create -B ${{ github.ref_name }} -H main --title 'Merge ${{ github.ref_name }} into main' --body 'Created by Github action' --repo $GITHUB_REPOSITORY
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.event.repository.name }}
