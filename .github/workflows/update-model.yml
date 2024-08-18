@@ -6,7 +6,7 @@ on:
   
 permissions: write-all
 jobs:
-  build:
+  generate-model:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,10 +21,6 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: make eval
-  generate-model:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Update Branch
         run: make update-branch USER_NAME=$NAME USER_EMAIL=$EMAIL
         env:
