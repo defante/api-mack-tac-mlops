@@ -20,5 +20,5 @@ eval:
 update-branch:
 	git config --global user.name "$(USER_NAME)"
 	git config --global user.email "$(USER_EMAIL)"
-	git config user.name
-	git config user.email
+	git commit -am "Update with new model and results"
+	git push --force origin HEAD:update
