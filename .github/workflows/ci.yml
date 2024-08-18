@@ -26,7 +26,7 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v3
-      - name: create pull request
+      - name: Create Pull Request
         run: |
           gh pr create -H ${{ github.ref_name }} -B main --title 'Merge ${{ github.ref_name }} into main' --body 'Created by Github action' --repo $GITHUB_REPOSITORY || gh pr edit -B main --title 'Merge ${{ github.ref_name }} into main' --body 'Created by Github action' --repo $GITHUB_REPOSITORY
         env:

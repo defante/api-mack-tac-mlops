@@ -163,7 +163,3 @@ cython_debug/
 
 # VSCode
 .vscode
-
-# Files builded by the workflow
-results/
-model/
