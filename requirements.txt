@@ -1,0 +1,8 @@
+scikit-learn==1.5.1
+glob
+os
+pandas
+numpy
+seaborn
+matplotlib
+cloudpickle
