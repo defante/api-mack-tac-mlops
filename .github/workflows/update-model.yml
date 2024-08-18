@@ -1,0 +1,32 @@
+name: Update Model
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+  
+permissions: write-all
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: iterative/setup-cml@v2
+      - name: Install Packages
+        run: make install
+      - name: Format
+        run: make format
+      - name: Train
+        run: make train
+      - name: Evaluation
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: make eval
+  generate-model:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Update Branch
+        run: make update-branch USER_NAME=$NAME USER_EMAIL=$EMAIL
+        env:
+          NAME: ${{ secrets.USER_NAME }}
+          EMAIL: ${{ secrets.USER_EMAIL }}
