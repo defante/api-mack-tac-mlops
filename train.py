@@ -86,6 +86,11 @@ metrics_data = {'accuracy': (pipe.score(X_pipe_test, y_pipe_test)),
                 'f1-score': (f1_score(y_pipe_test.values, predictions, pos_label=4)),
                 'cm': confusion_matrix(y_pipe_test, predictions)}
 
+try:
+    os.mkdir('results')
+except FileExistsError:
+    pass
+
 with open('results/metrics.txt', 'w') as outfile:
     outfile.write(f"\nAccuracy = {round(metrics_data['accuracy'], 4)}, " + 
                     f"Recall = {round(metrics_data['recall'], 4)}, " +
@@ -119,6 +124,11 @@ plt.savefig("results/model_results.png", dpi=120)
 
 ## Saving Pipeline
 model_file = "model/anomaly_detector_pipeline.pkl"
+
+try:
+    os.mkdir('model')
+except FileExistsError:
+    pass
 
 with open(model_file, 'wb') as pkl_file:
     dump(pipe, pkl_file)

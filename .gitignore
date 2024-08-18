@@ -165,5 +165,5 @@ cython_debug/
 .vscode
 
 # Files builded by the workflow
-/results/*
-/model/*
+results/
+model/
