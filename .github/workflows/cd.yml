@@ -1,0 +1,18 @@
+name: Continuous Deployment
+on:
+  workflow_run:
+    workflows: ["Update Model"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deployment To Hugging Face
+        env:
+          HF: ${{ secrets.HF }}
+        run: make deploy HF=$HF
