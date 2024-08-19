@@ -34,5 +34,4 @@ push-hub:
 	huggingface-cli upload defante/api-mack-tac-mlops ./model /model --repo-type=space --commit-message="Sync Model"
 	huggingface-cli upload defante/api-mack-tac-mlops ./results /metrics --repo-type=space --commit-message="Sync Metrics"
 
-deploy:
-	hf-login push-hub
+deploy:	hf-login push-hub
