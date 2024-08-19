@@ -1,2 +1,8 @@
 gradio
+scikit-learn==1.5.1
 pandas
+numpy
+seaborn
+matplotlib
+cloudpickle
+black
