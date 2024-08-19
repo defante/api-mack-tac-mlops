@@ -10,7 +10,8 @@ Is located in the train.py file.
 Is located at the app/ dir.
 
 ## Metadata
-title: Api Mack Tac Mlops
+---
+title: Flow Instability Anomaly Classification API
 emoji: 🦀
 colorFrom: indigo
 colorTo: red
@@ -19,3 +20,4 @@ sdk_version: 4.41.0
 app_file: app/anomaly-detector.py
 pinned: false
 license: mit
+---
