@@ -20,7 +20,8 @@ eval:
 update-branch:
 	git config --global user.name "$(USER_NAME)"
 	git config --global user.email "$(USER_EMAIL)"
-	git commit --allow-empty -am "Update with new model and results"
+	git add .
+	git commit -am "Update with new model and results"
 	git push --force origin HEAD:update
 
 hf-login:
