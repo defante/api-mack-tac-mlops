@@ -1,5 +1,5 @@
-## Metadata
-title: Api Mack Tac Mlops
+---
+title: Flow Instability Anomaly Classification API
 emoji: 👾
 colorFrom: indigo
 colorTo: purple
@@ -8,3 +8,4 @@ sdk_version: 4.41.0
 app_file: anomaly-detector.py
 pinned: false
 license: mit
+---
