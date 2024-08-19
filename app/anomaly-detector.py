@@ -2,7 +2,7 @@ import gradio as gr
 import pickle
 import pandas as pd
 
-with open("./../model/anomaly_detector_pipeline.pkl", "rb") as model_file:
+with open("./model/anomaly_detector_pipeline.pkl", "rb") as model_file:
     pipe = pickle.load(model_file)
 
 def predict_class(timestamp, p_pdg, p_tpt, t_tpt, p_mon_ckp, t_jus_ckp, p_jus_ckgl, t_jus_ckgl, qgl):
