@@ -8,6 +8,6 @@ colorFrom: indigo
 colorTo: red
 sdk: gradio
 sdk_version: 4.41.0
-app_file: app.py
+app_file: app/anomaly-detector.py
 pinned: false
 license: mit
