@@ -6,3 +6,5 @@ matplotlib
 cloudpickle
 black
 gradio
+mlflow
+jupyter
