@@ -31,8 +31,10 @@ hf-login:
 	huggingface-cli login --token $(HF) --add-to-git-credential
 
 push-hub:
-	huggingface-cli upload defante/api-mack-tac-mlops ./app --repo-type=space --commit-message="Sync App files"
+	huggingface-cli upload defante/api-mack-tac-mlops ./app /app --repo-type=space --commit-message="Sync App files"
+	huggingface-cli upload defante/api-mack-tac-mlops ./app/README.md --repo-type=space --commit-message="Sync README"
 	huggingface-cli upload defante/api-mack-tac-mlops ./model /model --repo-type=space --commit-message="Sync Model"
 	huggingface-cli upload defante/api-mack-tac-mlops ./results /metrics --repo-type=space --commit-message="Sync Metrics"
+	huggingface-cli upload defante/api-mack-tac-mlops Dockerfile --repo-type=space --commit-message="Sync Dockerfile"
 
 deploy:	hf-login push-hub
